@@ -1,11 +1,12 @@
-import io.restassured.RestAssured;;
 import io.restassured.response.Response;
 import org.junit.Test;
 import static io.restassured.RestAssured.*;
-import static org.hamcrest.CoreMatchers.equalTo;
+import static io.restassured.matcher.RestAssuredMatchers.*;
+import static org.hamcrest.Matchers.*;
 
 
 public class Escapi {
+
 
     //check the README for useful information about Rest Assured
 
@@ -17,8 +18,8 @@ public class Escapi {
 
     @Test
     public void example(){
-        // sets a baseuri for every request in this runÓ
-        RestAssured.baseURI = "https://randomuser.me";
+        // sets a baseuri for every request in this run
+        baseURI = "https://randomuser.me";
         Response exampleRequest =
                 given().
                         // logs the request in the console
@@ -43,7 +44,6 @@ public class Escapi {
         // prints output to the console
         System.out.println("The lastname found in the extracted response = " + lastName);
     }
-
 
 
 }
