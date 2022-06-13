@@ -1,6 +1,4 @@
-import io.restassured.RestAssured;
-import io.restassured.http.ContentType;
-import io.restassured.http.Header;
+import io.restassured.RestAssured;;
 import io.restassured.response.Response;
 import org.junit.Test;
 import static io.restassured.RestAssured.*;
@@ -19,7 +17,7 @@ public class Escapi {
 
     @Test
     public void example(){
-        // sets a baseuri for every request in this run
+        // sets a baseuri for every request in this runÓ
         RestAssured.baseURI = "https://randomuser.me";
         Response exampleRequest =
                 given().
