@@ -25,7 +25,7 @@ public class Escapi {
                         // logs the request in the console
                         log().all().
                         // adds a queryparam to the request
-                        queryParam("gender", "female").
+                        queryParam("color", "red").
                 when().
                         // combines the baseURI with /api and makes a GET request
                         get("/api").
@@ -35,7 +35,7 @@ public class Escapi {
                         // validates that that the statuscode from the respons is 200
                         statusCode(200).
                         // checks if the body contains a gender node with value female
-                        body("results[0].gender", equalTo("female")).
+                        body("results[0].color", equalTo("red")).
                 extract()
                         // this will save the response in the exampleRequest variable
                         .response();
