@@ -7,7 +7,7 @@ import static io.restassured.RestAssured.*;
 
 public class Escapi {
 
-    String apikey = "YOUR-API-KEY";
+    String apikey = "f9f23ad1-04ac-43d8-8bfd-4014f7949c03";
     int sumSolution;
     Towers towersSolution;
     String solution1Header;
@@ -17,7 +17,7 @@ public class Escapi {
 
     @Before
     public void setup() {
-        baseURI = "https://escape.ta-workshop.nl/duo";
+        baseURI = "http://localhost:80/duo";
     }
 
     @Test
@@ -119,16 +119,16 @@ public class Escapi {
                         statusCode(200).
                 extract()
                         .response();
-        if (!towersPostResponse.asString().contains("Selenium")) {
-            specialistNumber = 587426;
+        if (!towersPostResponse.asString().contains("Playwright")) {
+            specialistNumber = 587426; //Jurian
         } else if (!towersPostResponse.asString().contains("Postman")) {
-            specialistNumber = 627836;
-        } else if (!towersPostResponse.asString().contains("Cucumber")) {
-            specialistNumber = 7346337;
-        } else if (!towersPostResponse.asString().contains("Protractor")) {
-            specialistNumber = 527786;
+            specialistNumber = 32843; // David
+        } else if (!towersPostResponse.asString().contains("Cypress")) {
+            specialistNumber = 7346337; //Reinder
+        } else if (!towersPostResponse.asString().contains("Python")) {
+            specialistNumber = 6278456; //Martijn
         } else {
-            specialistNumber = 32472;
+            specialistNumber = 527786; //Jarsto
         }
         solution2Header = towersPostResponse.header("solution2");
         System.out.println("The solutionHeader for puzzle 1: " + solution2Header);
